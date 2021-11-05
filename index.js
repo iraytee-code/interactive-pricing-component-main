@@ -17,7 +17,7 @@ mainDiv.classList.add("main_div");
 //pricing feature
 mainDiv.innerHTML = `
 <div class="value view_value">
-<p class="view_svalue"><span id="demo"><p>K Page Views</p></span></p> 
+<p class="view_svalue"><span id="viewValue"><p>K Page Views</p></span></p> 
 </div>
 <div class="value"><span class="price_value">$16</span> /month</div>
 `;
@@ -29,7 +29,7 @@ const valueSlider = document.createElement("div");
 valueSlider.classList.add("slidercontainer");
 
 valueSlider.innerHTML = `<div class="slidecontainer">
-<input type="range" min="1" max="100" value="50" class="slider" id="myRange"></div>`;
+<input type="range" min="1" max="100" value="50" class="slider" id="viewRange"></div>`;
 
 main.append(valueSlider);
 
@@ -70,8 +70,8 @@ ownership</li><li class="list-type">
 main.append(faqDetails);
 
 //slider value output
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
+var slider = document.getElementById("viewRange");
+var output = document.getElementById("viewValue");
 output.innerHTML = slider.value;
 
 slider.oninput = function () {

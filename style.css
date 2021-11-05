@@ -309,3 +309,50 @@ input:checked + .slider:before {
   border-radius: 0.938rem;
   cursor: pointer;
 }
+
+/* media queries */
+@media screen and (max-width: 480px) {
+  .wrapper {
+    min-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .container {
+    min-width: 100%;
+    padding: 0;
+  }
+
+  .main_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .value {
+    box-sizing: border-box;
+    padding: 1.25rem 0;
+  }
+
+  .slidercontainer {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.25rem 0;
+  }
+
+  .duration_div {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .details {
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1.2rem 0;
+  }
+
+  .sub_details {
+    box-sizing: border-box;
+    padding: 1rem 0;
+  }
+}
