@@ -1,0 +1,311 @@
+/* Reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: url(./images/pattern-circles.svg), #f1f5fe;
+  background-repeat: no-repeat;
+  background-position: top, center;
+}
+
+.container {
+  min-width: 25rem;
+  height: auto;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+/* header style */
+.header {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 1.25rem 0;
+  margin: 2rem 0;
+}
+
+.header_text {
+  color: #1b223f;
+  font-size: 2rem;
+  padding: 1.5rem 0;
+}
+
+.paragraph_text {
+  color: #27387e;
+}
+
+.main_div {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  align-items: center;
+}
+
+.value {
+  font-size: 20px;
+  color: #90959d;
+}
+
+.view_value {
+  display: flex;
+}
+
+.price_value {
+  font-size: 2.5rem;
+  color: #27387e;
+  font-weight: bold;
+}
+/* price selector slide */
+.slidercontainer {
+  box-sizing: border-box;
+  padding: 2.5rem 0;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.625rem;
+  border-radius: 5px;
+  background: #a8f2e8;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border-radius: 50%;
+  background: url("./images/icon-slider.svg"), #0fd9c6;
+  cursor: pointer;
+  color: #0fd9c6;
+  -webkit-box-shadow: 0px 13px 25px -6px rgba(15, 217, 198, 0.97);
+  box-shadow: 0px 13px 25px -6px rgba(15, 217, 198, 0.97);
+}
+
+/* bill duration */
+
+.bill_duration {
+  box-sizing: border-box;
+  display: flex;
+  padding: 1.25rem 0;
+  justify-content: space-around;
+}
+
+/* toggle button style */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 16px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider_ball {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider_ball:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider_ball {
+  background-color: #2196f3;
+}
+
+input:focus + .slider_ball {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider_ball.round {
+  border-radius: 2.125rem;
+}
+
+.slider_ball.round:before {
+  border-radius: 50%;
+}
+
+/* sub details styles */
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.list-type {
+  padding: 0.625rem;
+}
+
+.start_button {
+  background: #293356;
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 0.938rem;
+  cursor: pointer;
+}
