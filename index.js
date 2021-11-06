@@ -46,7 +46,7 @@ billDuration.innerHTML = `
 <div class="sub-type">Monthly Billing</div>
 <label class="switch">
   <input type="checkbox">
-  <span class="slider_ball round"></span>
+  <span class="toggle_switch" checked></span>
 </label>
 <div class="sub-type">Yearly Billing</div>
 `;
