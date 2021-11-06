@@ -45,7 +45,7 @@ billDuration.setAttribute("id", "duration");
 billDuration.innerHTML = `
 <div class="sub-type">Monthly Billing</div>
 <label class="switch">
-  <input type="checkbox">
+  <input type="checkbox" onclick="planDetailSwitch()">
   <span class="toggle_switch"></span>
 </label>
 <div class="sub-type">Yearly Billing</div>
@@ -79,14 +79,11 @@ slider.oninput = function () {
 };
 
 //toggle switch plan change
-
-const planSwitch = document.querySelector(".toggle_switch");
-
-planSwitch.addEventListener("click", function () {
-  const subValue = document.querySelector(".price_value");
-  subValue.textContent = "$192";
-
-  const yearValue = document.querySelector(".annualValue");
-
-  console.log(subValue.textContent);
-});
+function planDetailSwitch() {
+  const billDetails = document.querySelector(".price_value");
+  if (billDetails.innerHTML === "$16") {
+    billDetails.innerHTML = "$192";
+  } else {
+    billDetails.innerHTML = "$16";
+  }
+}
