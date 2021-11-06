@@ -19,7 +19,7 @@ mainDiv.innerHTML = `
 <div class="value view_value">
 <p class="view_svalue"><span id="viewValue"><p>K Page Views</p></span></p> 
 </div>
-<div class="value annualValue"><span class="price_value">$16</span> /month</div>
+<div class="value annualValue"><span class="price_value">$16</span><span class="durationValue">/month</span></div>
 `;
 
 main.append(mainDiv);
@@ -83,7 +83,11 @@ function planDetailSwitch() {
   const billDetails = document.querySelector(".price_value");
   if (billDetails.innerHTML === "$16") {
     billDetails.innerHTML = "$192";
+    const yearText = document.querySelector(".durationValue");
+    yearText.textContent = "/year";
   } else {
     billDetails.innerHTML = "$16";
+    const yearText = document.querySelector(".durationValue");
+    yearText.textContent = "/month";
   }
 }
