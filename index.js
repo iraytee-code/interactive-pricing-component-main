@@ -19,7 +19,7 @@ mainDiv.innerHTML = `
 <div class="value view_value">
 <p class="view_svalue"><span id="viewValue"><p>K Page Views</p></span></p> 
 </div>
-<div class="value annualValue"><span class="price_value">$16</span><span class="durationValue">/month</span></div>
+<div class="value annualValue"><span class="price_value">$0</span><span class="durationValue">/month</span></div>
 `;
 
 main.append(mainDiv);
@@ -29,7 +29,7 @@ const valueSlider = document.createElement("div");
 valueSlider.classList.add("slidercontainer");
 
 valueSlider.innerHTML = `<div class="slidecontainer">
-<input type="range" min="1" max="100" value="50" class="slider" id="viewRange"></div>`;
+<input type="range" min="1" max="100" value="0" class="slider" id="viewRange"></div>`;
 
 main.append(valueSlider);
 
@@ -79,15 +79,27 @@ slider.oninput = function () {
 };
 
 //toggle switch plan change
-function planDetailSwitch() {
+
+const viewRate = {
+  monthly: 3,
+  yearly: 16,
+};
+console.log(viewRate.monthly);
+const planDetailSwitch = function () {
   const billDetails = document.querySelector(".price_value");
-  if (billDetails.innerHTML === "$16") {
-    billDetails.innerHTML = "$192";
-    const yearText = document.querySelector(".durationValue");
+  if (billDetails.innerHTML === "$0") {
+    let yearText = document.querySelector(".durationValue");
     yearText.textContent = "/year";
+    let viewsSelected = document.querySelector(".viewValue");
+    viewsSelected = slider.value;
+
+    billDetails.innerHTML = "$" + viewsSelected * viewRate.yearly;
   } else {
-    billDetails.innerHTML = "$16";
-    const yearText = document.querySelector(".durationValue");
+    billDetails.innerHTML = "16";
+    var yearText = document.querySelector(".durationValue");
     yearText.textContent = "/month";
+    var viewsSelected = document.querySelector(".viewValue");
+    viewsSelected = slider.value;
+    billDetails.innerHTML = "$" + viewsSelected * viewRate.monthly;
   }
-}
+};
