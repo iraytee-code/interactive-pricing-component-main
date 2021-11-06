@@ -19,7 +19,7 @@ mainDiv.innerHTML = `
 <div class="value view_value">
 <p class="view_svalue"><span id="viewValue"><p>K Page Views</p></span></p> 
 </div>
-<div class="value annualValue"><span class="price_value">$0</span><span class="durationValue">/month</span></div>
+<div class="value annualValue"><span class="price_value">$3</span><span class="durationValue">/month</span></div>
 `;
 
 main.append(mainDiv);
@@ -84,10 +84,10 @@ const viewRate = {
   monthly: 3,
   yearly: 16,
 };
-console.log(viewRate.monthly);
+
 const planDetailSwitch = function () {
   const billDetails = document.querySelector(".price_value");
-  if (billDetails.innerHTML === "$0") {
+  if (billDetails.innerHTML === "$3") {
     let yearText = document.querySelector(".durationValue");
     yearText.textContent = "/year";
     let viewsSelected = document.querySelector(".viewValue");
@@ -95,7 +95,6 @@ const planDetailSwitch = function () {
 
     billDetails.innerHTML = "$" + viewsSelected * viewRate.yearly;
   } else {
-    billDetails.innerHTML = "16";
     var yearText = document.querySelector(".durationValue");
     yearText.textContent = "/month";
     var viewsSelected = document.querySelector(".viewValue");
