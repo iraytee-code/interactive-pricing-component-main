@@ -19,7 +19,7 @@ mainDiv.innerHTML = `
 <div class="value view_value">
 <p class="view_svalue"><span id="viewValue"><p>K Page Views</p></span></p> 
 </div>
-<div class="value"><span class="price_value">$16</span> /month</div>
+<div class="value annualValue"><span class="price_value">$16</span> /month</div>
 `;
 
 main.append(mainDiv);
@@ -46,7 +46,7 @@ billDuration.innerHTML = `
 <div class="sub-type">Monthly Billing</div>
 <label class="switch">
   <input type="checkbox">
-  <span class="toggle_switch" checked></span>
+  <span class="toggle_switch"></span>
 </label>
 <div class="sub-type">Yearly Billing</div>
 `;
@@ -77,3 +77,16 @@ output.innerHTML = slider.value;
 slider.oninput = function () {
   output.innerHTML = this.value;
 };
+
+//toggle switch plan change
+
+const planSwitch = document.querySelector(".toggle_switch");
+
+planSwitch.addEventListener("click", function () {
+  const subValue = document.querySelector(".price_value");
+  subValue.textContent = "$192";
+
+  const yearValue = document.querySelector(".annualValue");
+
+  console.log(subValue.textContent);
+});

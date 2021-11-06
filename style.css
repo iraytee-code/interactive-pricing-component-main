@@ -232,6 +232,7 @@ table {
   display: inline-block;
   width: 40px;
   height: 20px;
+  border: none;
 }
 
 .toggle_switch {
@@ -244,6 +245,7 @@ table {
   background: #cccccc;
   transition: 0.4s;
   border-radius: 34px;
+  border: none;
 }
 
 .switch input {
